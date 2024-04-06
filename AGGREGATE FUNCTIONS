@@ -1,0 +1,30 @@
+use sampleDB;
+
+create table Orders1(order_id int primary key,order_status varchar(20),order_rate int,Total_amount int,order_place varchar(30),Date varchar(30));
+
+
+INSERT INTO Orders1 VALUES
+(1,'pending',100,200,'california','2023-10-03'),
+(2,'completed',100,200,'Scotland','2023-10-06'),
+(3,'processing',100,200,'california','2023-10-08'),
+(4,'processing',100,200,'Canada','2023-10-01'),
+(5,'completed',100,300,'Canada','2023-10-02'),
+(6,'completed',100,500,'Canada','2023-10-10');
+
+
+select * from Orders;
+
+SELECT AVG(Total_amount) AS Orderamount 
+FROM Orders
+WHERE order_status = 'processing';
+
+select count(order_id)  from Orders where order_place = 'california';
+
+SELECT COUNT(order_id)
+FROM Orders1
+WHERE Date BETWEEN '2023-10-05' AND '2023-10-10';
+
+select * from Orders1 where order_status='completed' AND Total_amount>200;
+
+
+
