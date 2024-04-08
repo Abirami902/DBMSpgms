@@ -1,0 +1,34 @@
+create database two;
+
+use two;
+
+create table Employee(emp_id int primary key,emp_name varchar(20),emp_salary decimal,emp_dpt varchar(20));
+
+insert into Employee values(1,'jose',70000,'FINANCE'),(2,'aami',50000,'HR'),(3,'shij',80000,'IT'),
+(4,'anju',90000,'IT'),(5,'abhi',30000,'FINANCE');
+
+select * from Employee;
+
+Alter table Employee Add emp_age int; 
+
+update Employee set emp_age=30 where emp_id=1;
+
+delete from Employee where emp_id=2;
+
+Alter table Employee Rename to Staff;
+
+select * from Staff where emp_salary>60000 AND emp_dpt='IT';
+
+update Staff set emp_age=28 where emp_id=3;
+
+select * from Staff where emp_age between 25 AND 35;
+
+select * from  Staff where emp_dpt = 'IT' OR 'FINANCE';
+
+select count(emp_id) from Staff;
+
+SELECT MAX(emp_salary) AS max_salary, MIN(emp_salary) AS min_salary FROM Staff;
+
+SELECT sum(emp_salary) AS total_salary, avg(emp_salary) AS avg_salary FROM Staff;
+
+select * from Staff where emp_name like "j%";
