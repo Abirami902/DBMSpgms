@@ -1,0 +1,50 @@
+use sampleDB;
+ 
+create table customers( cusomer_id int primary key,customer_name varchar(20),
+contact_name varchar(20),address varchar(35),city varchar(20),postcode int , country varchar(20));
+
+insert into customers values(1,'jose','joe','kulangara','Berlin',673634,'india'),(2,'aami','abi','ittiyatu','ayikkarapadi',673634,'india'),
+(9,'shij','shiju','faisal mosque','islamabad',44000,'pakistan'),(10,'anju','kunju','west asia','Arabian peninsula',11400,'Mexico'),
+(11,'zoba','lami','west asia','Arabian peninsula',879008,'Germany');
+
+select * from customers;
+
+select * from customers where cusomer_id=1;
+
+select distinct country from customers;
+
+select * from customers order by country DESC;
+
+select * from customers order by postcode DESC;
+
+select * from customers order by customer_name ;
+
+-- a-h
+
+SELECT *
+FROM customers
+ORDER BY country, customer_name;
+
+SELECT *
+FROM customers
+ORDER BY country ASC, customer_name DESC;
+
+SELECT *
+FROM customers
+where country ='Germany' OR city='Berlin' AND postcode >12000;
+
+SELECT *
+FROM customers
+where country ='Germany' OR country='Mexico' ;
+
+
+SELECT *
+FROM customers
+where country='Mexico' ;
+
+SELECT *
+FROM customers
+WHERE country <> 'Mexico';
+
+
+
